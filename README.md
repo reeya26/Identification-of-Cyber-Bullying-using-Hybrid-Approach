@@ -4,6 +4,17 @@ This project was part of my Undergraduate Thesis. This was a cause that was impo
 
 The research paper was presented and published with [IEEE Xplore](https://ieeexplore.ieee.org/document/9001476)
 
+## Description of all functions
+
+* **data_collection.py** uses the Tweepy API to extract tweets as per the filter entered by the user (eg. timeline, geography, etc)
+* **data_preprocessing.py** works on cleaning and segmenting the data into text and emoticons
+* **knowledge_algo.py** uses a lexicon for opinion mining called, SentiWordNet, to assign polarity to each tweet. A separate database assigns polarity to the emoticons.
+* **ml_algo.py** uses a Bagging Classifier including Naive Bayes and Linear Support Vector Machine to assign a polarity of either 0 or 1 to a tweet,thereby reaffirming the value given by SentiWorkNet. The trained dataset is stored as a pickle file.
+* **main.py** calls all the functions to iterate over a series of tweets.
+* **accuracy.py** uses a Confusion Matrix to calculate the accuracy of the algorithm "With Nouns". The classification algorithm is 70.3% accurate.
+
+
+
 ## Architecture Diagram
 
 Our framework consists of three main steps, which includes knowledge based sentiment analysis, whose result is then reinforced with machine learning based analysis. The resulting polarity is then aggregated with the polarity obtained from the emoticons, which segregates the tweets into varying levels of positive and negative text.
